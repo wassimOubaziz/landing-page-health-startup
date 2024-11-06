@@ -21,6 +21,11 @@ export default function Component() {
     seconds: 0
   })
 
+  interface MarketInfo {
+    title: string;
+    content: string;
+  }
+
   useEffect(() => {
     const root = window.document.documentElement
     root.classList.toggle('dark', isDarkMode)
@@ -79,20 +84,21 @@ export default function Component() {
     { icon: Wind, title: 'Air Quality Alerts' },
   ]
 
-  const marketInfo = {
+  const marketInfo: { [key: string]: MarketInfo } = {
     market: {
       title: 'Market Analysis',
-      content: 'The digital health market in Algeria is projected to grow at a CAGR of 15% over the next 5 years. With increasing smartphone penetration and a growing elderly population, there\'s a significant opportunity for innovative health monitoring solutions.'
+      content: 'The digital health market in Algeria is projected to grow at a CAGR of 15% over the next 5 years. With increasing smartphone penetration and a growing elderly population, there\'s a significant opportunity for innovative health monitoring solutions.',
     },
     target: {
       title: 'Target Audience',
-      content: 'Our primary target audience includes elderly individuals living independently, their adult children, and individuals with chronic health conditions. We also target health-conscious adults who want to proactively manage their well-being.'
+      content: 'Our primary target audience includes elderly individuals living independently, their adult children, and individuals with chronic health conditions. We also target health-conscious adults who want to proactively manage their well-being.',
     },
     traction: {
       title: 'Traction',
-      content: 'Since our soft launch 6 months ago, we\'ve acquired 10,000 active users, with a month-over-month growth rate of 20%. Our user retention rate stands at 85%, indicating strong product-market fit.'
-    }
-  }
+      content: 'Since our soft launch 6 months ago, we\'ve acquired 10,000 active users, with a month-over-month growth rate of 20%. Our user retention rate stands at 85%, indicating strong product-market fit.',
+    },
+  };
+  
 
   const testimonials = [
     { name: 'Amina B.', age: 68, quote: 'Digital Health Guardian gives me peace of mind living alone. The accident detection feature already saved me once!' },
